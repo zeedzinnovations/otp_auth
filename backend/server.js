@@ -122,9 +122,13 @@ app.post("/verify-otp", async (req, res) => {
     res.cookie(REFRESH_COOKIE_NAME, plainRefreshToken, cookieOptions);
 
     res.json({
+       id: otpData.id,                
+      phone_number,
       message: "OTP verified",
       accessToken,
-      expiresIn: ACCESS_TOKEN_EXPIRY,
+      refreshTokenHash,             
+      refreshTokenExpiry: refreshExpiresAt,
+      expiresIn: ACCESS_TOKEN_EXPIRY
     });
   } catch (err) {
     console.error("Verification error:", err);
