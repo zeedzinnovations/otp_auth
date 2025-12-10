@@ -73,7 +73,7 @@ app.post("/send-otp", async (req, res) => {
       [phone_number, otp, expires_at]
     );
 
-    res.json({ message: "OTP sent" });
+    res.json({ message: "OTP sent",otp: otp });
   } catch (err) {
     console.error("Failed to insert OTP:", err);
     res.status(500).json({ message: "OTP sending failed" });
