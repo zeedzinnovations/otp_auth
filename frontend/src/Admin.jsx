@@ -38,7 +38,7 @@ export default function Admin() {
   const [otpList, setOtpList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const API = import.meta.env.REACT_BACKEND_URL;
+ const API = import.meta.env.VITE_BACKEND_URL;
 
   // Fetch OTPs
   useEffect(() => {
