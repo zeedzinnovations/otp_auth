@@ -37,8 +37,13 @@ export default function Admin() {
   const [activeView, setActiveView] = useState("dashboard");
   const [otpList, setOtpList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const API = import.meta.env.REACT_BACKEND_URL;
+app.get("/all-refresh-tokens", async (req, res) => {
+  const result = await pool.query(
+    `SELECT * FROM refresh_tokens ORDER BY created_at DESC`
+  );
+  res.json(result.rows);
+});
+ const API = import.meta.env.VITE_APP_BACKEND_URL;
 
   // Fetch OTPs
   useEffect(() => {
@@ -267,3 +272,4 @@ export default function Admin() {
     </div>
   );
 }
+
