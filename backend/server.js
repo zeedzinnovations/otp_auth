@@ -49,14 +49,14 @@ const cookieOptions = {
 };
 
 
-app.get("/", (req, res) => {
-  res.send("Welcome Users");
-});
+
 
 
 const api = express.Router();
 app.use("/devapiService", api);
-
+api.get("/", (req, res) => {
+  res.send("Welcome Users");
+});
 // send otp
 api.post("/send-otp", async (req, res) => {
   const { phone_number } = req.body;

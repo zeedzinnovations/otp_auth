@@ -44,7 +44,7 @@ export default function Admin() {
   useEffect(() => {
     async function fetchOTPs() {
       try {
-        const res = await fetch(`${API}/otps`);
+        const res = await fetch(`${API}/devapiService/getOtpList`);
         const data = await res.json();
         setOtpList(data);
       } catch (err) {
