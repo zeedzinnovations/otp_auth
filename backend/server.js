@@ -49,7 +49,9 @@ const cookieOptions = {
 };
 
 
-
+app.use("/",(req,res)=>{
+  res.send("Welcome to backend")
+})
 
 
 const api = express.Router();
