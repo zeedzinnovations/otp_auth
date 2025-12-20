@@ -50,7 +50,9 @@ const cookieOptions = {
 
 
 
-
+app.get("/",(req,res)=>{
+  res.send("Welcome to backend")
+})
 
 const api = express.Router();
 app.use("/devapiService", api);
