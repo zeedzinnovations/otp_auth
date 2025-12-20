@@ -56,7 +56,7 @@ app.use("/",(req,res)=>{
 
 const api = express.Router();
 app.use("/devapiService", api);
-api.get("/", (req, res) => {
+api.get("/devapiService", (req, res) => {
   res.send("Welcome Users");
 });
 // send otp
