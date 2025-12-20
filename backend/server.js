@@ -49,14 +49,12 @@ const cookieOptions = {
 };
 
 
-app.use("/",(req,res)=>{
-  res.send("Welcome to backend")
-})
+
 
 
 const api = express.Router();
 app.use("/devapiService", api);
-api.get("/devapiService", (req, res) => {
+api.get("/", (req, res) => {
   res.send("Welcome Users");
 });
 // send otp
